@@ -1,426 +1,378 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGL SPAM</title>
+    <title>NGL BRUTAL SPAMMER - Web Edition</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #ff006e;
+            --secondary: #ff6b35;
+            --accent: #f7931e;
+            --glass-bg: rgba(30, 30, 40, 0.55);
+            --glass-border: rgba(255,255,255,0.15);
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
         }
-
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+            padding: 24px;
+            background: var(--glass-bg);
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+            border: 1.5px solid var(--glass-border);
+            backdrop-filter: blur(18px);
         }
-
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            position: relative;
+            margin-bottom: 36px;
         }
-
         .title {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 900;
-            background: linear-gradient(45deg, #ff006e, #ff6b35, #f7931e, #ff006e);
-            background-size: 400% 400%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientShift 3s ease-in-out infinite;
-            text-shadow: 0 0 30px rgba(255, 0, 110, 0.5);
-            margin-bottom: 10px;
+            animation: gradientShift 4s ease-in-out infinite;
+            text-shadow: 0 0 32px rgba(255, 0, 110, 0.3);
+            letter-spacing: 2px;
         }
-
         @keyframes gradientShift {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
-
         .subtitle {
-            font-size: 1.2rem;
-            color: #888;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #bbb;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
         }
-
         .stats-bar {
             display: flex;
-            justify-content: space-around;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 15px;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.07);
+            padding: 18px 10px;
+            border-radius: 18px;
             margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-
         .stat-item {
             text-align: center;
+            flex: 1;
         }
-
         .stat-number {
-            font-size: 2rem;
+            font-size: 2.1rem;
             font-weight: bold;
-            color: #ff006e;
+            color: var(--primary);
+            margin-bottom: 2px;
         }
-
         .stat-label {
-            font-size: 0.9rem;
-            color: #888;
+            font-size: 0.95rem;
+            color: #aaa;
         }
-
         .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
+            display: flex;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
         }
-
-        .control-panel {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        .control-panel, .attacks-panel {
+            flex: 1 1 350px;
+            min-width: 320px;
+            background: var(--glass-bg);
+            padding: 32px 24px;
+            border-radius: 24px;
+            border: 1.5px solid var(--glass-border);
+            box-shadow: var(--shadow);
+            margin-bottom: 16px;
         }
-
         .panel-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            margin-bottom: 20px;
-            color: #ff006e;
+            margin-bottom: 18px;
+            color: var(--primary);
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
-
         .form-label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
             font-weight: 600;
-            color: #ddd;
+            color: #eee;
         }
-
         .form-input {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 13px 15px;
+            border: 2px solid var(--glass-border);
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255,255,0.07);
             color: #fff;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
-
         .form-input:focus {
             outline: none;
-            border-color: #ff006e;
-            box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+            border-color: var(--primary);
+            box-shadow: 0 0 16px rgba(255,0,110,0.18);
         }
-
         .form-input::placeholder {
-            color: #666;
+            color: #888;
         }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .checkbox-input {
-            width: 20px;
-            height: 20px;
-            accent-color: #ff006e;
-        }
-
         .btn {
-            padding: 15px 30px;
+            padding: 14px 28px;
             border: none;
             border-radius: 10px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            min-width: 180px;
+            min-width: 150px;
             justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
         }
-
         .btn-primary {
-            background: linear-gradient(45deg, #ff006e, #ff6b35);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 0, 110, 0.4);
         }
-
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 0, 110, 0.6);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 6px 20px rgba(255, 0, 110, 0.25);
         }
-
         .btn-danger {
-            background: linear-gradient(45deg, #ff0000, #ff4444);
+            background: linear-gradient(90deg, #ff0000, #ff4444);
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
         }
-
         .btn-danger:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.25);
         }
-
         .btn-secondary {
-            background: linear-gradient(45deg, #666, #888);
+            background: linear-gradient(90deg, #666, #888);
             color: white;
-            box-shadow: 0 4px 15px rgba(102, 102, 102, 0.4);
         }
-
         .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 102, 102, 0.6);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 6px 20px rgba(102, 102, 102, 0.18);
         }
-        
         .btn-info {
-            background: linear-gradient(45deg, #17a2b8, #20c997);
+            background: linear-gradient(90deg, #17a2b8, #20c997);
             color: white;
-            box-shadow: 0 4px 15px rgba(23, 162, 184, 0.4);
         }
-
         .btn-info:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(23, 162, 184, 0.6);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 6px 20px rgba(23, 162, 184, 0.18);
         }
-        
         .btn i {
             font-size: 1rem;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
-        
         .btn:hover i {
-            transform: scale(1.1);
+            transform: scale(1.13);
         }
-        
         .button-group {
             display: flex;
             gap: 15px;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 0;
         }
-
         .attacks-panel {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             max-height: 600px;
             overflow-y: auto;
         }
-
         .attack-item {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.04);
+            padding: 18px 16px;
+            border-radius: 14px;
+            margin-bottom: 14px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-
         .attack-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateX(5px);
+            background: rgba(255,255,255,0.10);
+            transform: translateY(-2px) scale(1.01);
         }
-
         .attack-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
-
         .attack-username {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            color: #ff006e;
+            color: var(--primary);
         }
-
         .attack-status {
-            padding: 5px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: bold;
             text-transform: uppercase;
         }
-
         .status-running {
-            background: rgba(0, 255, 0, 0.2);
+            background: rgba(0,255,0,0.18);
             color: #00ff00;
-            border: 1px solid rgba(0, 255, 0, 0.3);
+            border: 1px solid rgba(0,255,0,0.22);
         }
-
         .status-completed {
-            background: rgba(0, 150, 255, 0.2);
+            background: rgba(0,150,255,0.18);
             color: #0096ff;
-            border: 1px solid rgba(0, 150, 255, 0.3);
+            border: 1px solid rgba(0,150,255,0.22);
         }
-
         .status-stopped {
-            background: rgba(255, 0, 0, 0.2);
+            background: rgba(255,0,0,0.18);
             color: #ff0000;
-            border: 1px solid rgba(255, 0, 0, 0.3);
+            border: 1px solid rgba(255,0,0,0.22);
         }
-
         .progress-bar {
             width: 100%;
             height: 8px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.13);
             border-radius: 4px;
             overflow: hidden;
-            margin: 10px 0;
+            margin: 10px 0 8px 0;
         }
-
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #ff006e, #ff6b35);
-            transition: width 0.3s ease;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s;
         }
-
         .attack-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 15px 0;
+            gap: 8px;
+            margin: 10px 0 8px 0;
         }
-
         .stat-box {
             text-align: center;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            padding: 7px 0;
+            background: rgba(255,255,255,0.07);
+            border-radius: 7px;
         }
-
         .stat-value {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            color: #ff006e;
+            color: var(--primary);
         }
-
         .stat-label-small {
             font-size: 0.8rem;
-            color: #888;
+            color: #aaa;
         }
-
         .attack-actions {
             display: flex;
             gap: 10px;
-            margin-top: 15px;
+            margin-top: 10px;
         }
-
         .btn-small {
-            padding: 8px 15px;
-            font-size: 0.9rem;
+            padding: 7px 14px;
+            font-size: 0.92rem;
         }
-
         .no-attacks {
             text-align: center;
-            color: #666;
+            color: #888;
             font-style: italic;
-            padding: 40px;
+            padding: 32px 0;
         }
-
         .floating-notification {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            border-radius: 10px;
+            top: 24px;
+            right: 24px;
+            padding: 15px 22px;
+            border-radius: 12px;
             color: white;
             font-weight: bold;
             z-index: 1000;
             transform: translateX(400px);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
+            font-size: 1.05rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.18);
         }
-
         .notification-success {
-            background: linear-gradient(45deg, #00ff00, #00cc00);
+            background: linear-gradient(90deg, #00ff00, #00cc00);
         }
-
         .notification-error {
-            background: linear-gradient(45deg, #ff0000, #cc0000);
+            background: linear-gradient(90deg, #ff0000, #cc0000);
         }
-
         .notification-show {
             transform: translateX(0);
         }
-
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .main-content {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                gap: 18px;
             }
-            
+            .container {
+                padding: 10px;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 0;
+                margin: 0;
+            }
             .title {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
-            
             .stats-bar {
                 flex-direction: column;
-                gap: 15px;
+                gap: 10px;
+                padding: 10px 4px;
+            }
+            .control-panel, .attacks-panel {
+                padding: 16px 6px;
             }
         }
-
-        .glow-effect {
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
-            }
-            to {
-                box-shadow: 0 0 30px rgba(255, 0, 110, 0.8);
-            }
+        footer {
+            width: 100%;
+            text-align: center;
+            color: #bbb;
+            font-size: 1rem;
+            margin: 32px 0 12px 0;
+            letter-spacing: 1px;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="title glow-effect">
+            <h1 class="title">
                 <i class="fas fa-skull-crossbones"></i>
                 NGL SPAMMER
                 <i class="fas fa-skull-crossbones"></i>
             </h1>
-            <p class="subtitle">By:KARLIX</p>
-            
+            <p class="subtitle">By: KARLIX</p>
             <div class="stats-bar">
                 <div class="stat-item">
                     <div class="stat-number" id="total-attacks">0</div>
@@ -444,104 +396,87 @@
                 </div>
             </div>
         </div>
-
         <div class="main-content">
             <div class="control-panel">
                 <h2 class="panel-title">
                     <i class="fas fa-crosshairs"></i>
                     Attack Control Panel
                 </h2>
-                
                 <form id="attack-form">
                     <div class="form-group">
-                        <label class="form-label">Target Username:</label>
+                        <label class="form-label">Target Username / Link NGL:</label>
                         <div style="display: flex; gap: 10px;">
-                            <input type="text" class="form-input" id="username" placeholder="Enter NGL username" required>
+                            <input type="text" class="form-input" id="username" placeholder="Masukkan username atau link NGL" required>
                             <button type="button" class="btn btn-secondary" onclick="validateUsername()" style="white-space: nowrap;">
-                                <i class="fas fa-check"></i> Validate
+                                <i class="fas fa-check"></i> Validasi
                             </button>
                         </div>
                         <div id="username-status" style="margin-top: 5px; font-size: 0.9rem;"></div>
                     </div>
-                    
                     <div class="form-group">
-                        <label class="form-label">Message:</label>
-                        <textarea class="form-input" id="message" rows="3" placeholder="Enter your brutal message" required></textarea>
+                        <label class="form-label">Pesan:</label>
+                        <textarea class="form-input" id="message" rows="3" placeholder="Tulis pesan brutal kamu" required></textarea>
                     </div>
-                    
                     <div class="form-group">
-                        <label class="form-label">Attack Count 1-50:</label>
+                        <label class="form-label">Jumlah Serangan 1-50:</label>
                         <input type="number" class="form-input" id="count" value="50" min="1" max="50" required>
-                        <small style="color: #888; font-size: 0.8rem;">saran pengiriman 25</small>
+                        <small style="color: #888; font-size: 0.8rem;">Saran pengiriman 25</small>
                     </div>
-                    
                     <div class="form-group">
-                        <label class="form-label">Delay (seconds):</label>
+                        <label class="form-label">Delay (detik):</label>
                         <input type="number" class="form-input" id="delay" value="0.02" min="0.005" max="10" step="0.005" required>
-                        <small style="color: #888; font-size: 0.8rem;">Recommended: 0.02-0.05 for ultra speed</small>
+                        <small style="color: #888; font-size: 0.8rem;">Rekomendasi: 0.02-0.05 untuk kecepatan maksimal</small>
                     </div>
-                    
-
-                    
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-rocket"></i>
-                        START ATTACK
+                        MULAI SERANG
                     </button>
                 </form>
-                
                 <div class="button-group" style="margin-top: 20px;">
                     <button class="btn btn-secondary" onclick="clearCompleted()">
                         <i class="fas fa-trash-alt"></i>
-                        Clear Completed
+                        Bersihkan Selesai
                     </button>
                     <button class="btn btn-info" onclick="checkConnection()">
                         <i class="fas fa-network-wired"></i>
-                        Test Connection
+                        Tes Koneksi
                     </button>
                 </div>
             </div>
-
             <div class="attacks-panel">
                 <h2 class="panel-title">
                     <i class="fas fa-list"></i>
-                    Active Attacks
+                    Serangan Aktif
                 </h2>
-                
                 <div id="attacks-list">
                     <div class="no-attacks">
                         <i class="fas fa-info-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                        <br>No active attacks. Start your first brutal assault!
+                        <br>Tidak ada serangan aktif. Mulai serangan brutal pertamamu!
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div id="notification" class="floating-notification"></div>
-
+    <footer>
+        &copy; 2024 KARLIX &mdash; NGL Spammer Web Edition. All rights reserved.
+    </footer>
     <script>
         let statusInterval;
-
-        
         document.addEventListener('DOMContentLoaded', function() {
             loadStatus();
             statusInterval = setInterval(loadStatus, 2000);
         });
-
-       
         document.getElementById('attack-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const formData = {
-                username: document.getElementById('username').value,
+                username: extractUsername(document.getElementById('username').value),
                 message: document.getElementById('message').value,
                 count: parseInt(document.getElementById('count').value),
                 delay: parseFloat(document.getElementById('delay').value)
             };
-            
             startAttack(formData);
         });
-
         async function startAttack(data) {
             try {
                 const response = await fetch('/start_attack', {
@@ -551,9 +486,7 @@
                     },
                     body: JSON.stringify(data)
                 });
-                
                 const result = await response.json();
-                
                 if (result.success) {
                     showNotification(result.message, 'success');
                     document.getElementById('attack-form').reset();
@@ -562,10 +495,9 @@
                     showNotification(result.message, 'error');
                 }
             } catch (error) {
-                showNotification('Failed to start attack: ' + error.message, 'error');
+                showNotification('Gagal memulai serangan: ' + error.message, 'error');
             }
         }
-
         async function stopAttack(attackId) {
             try {
                 const response = await fetch('/stop_attack', {
@@ -575,80 +507,67 @@
                     },
                     body: JSON.stringify({ attack_id: attackId })
                 });
-                
                 const result = await response.json();
                 showNotification(result.message, result.success ? 'success' : 'error');
                 loadStatus();
             } catch (error) {
-                showNotification('Failed to stop attack: ' + error.message, 'error');
+                showNotification('Gagal menghentikan serangan: ' + error.message, 'error');
             }
         }
-
         async function loadStatus() {
             try {
                 const response = await fetch('/get_status');
                 const statusData = await response.json();
-                
                 updateAttacksList(statusData);
                 updateGlobalStats(statusData);
             } catch (error) {
-                console.error('Failed to load status:', error);
+                console.error('Gagal memuat status:', error);
             }
         }
-
         function updateAttacksList(statusData) {
             const attacksList = document.getElementById('attacks-list');
-            
             if (Object.keys(statusData).length === 0) {
                 attacksList.innerHTML = `
                     <div class="no-attacks">
                         <i class="fas fa-info-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                        <br>No active attacks. Start your first brutal assault!
+                        <br>Tidak ada serangan aktif. Mulai serangan brutal pertamamu!
                     </div>
                 `;
                 return;
             }
-            
             let html = '';
-            
             for (const [attackId, attack] of Object.entries(statusData)) {
                 const progressPercent = Math.round(attack.progress);
-                
                 html += `
                     <div class="attack-item">
                         <div class="attack-header">
                             <div class="attack-username">@${attack.username}</div>
                             <div class="attack-status status-${attack.status}">${attack.status}</div>
                         </div>
-                        
                         <div class="progress-bar">
                             <div class="progress-fill" style="width: ${progressPercent}%"></div>
                         </div>
-                        
                         <div class="attack-stats">
                             <div class="stat-box">
                                 <div class="stat-value">${attack.sent}</div>
-                                <div class="stat-label-small">Sent</div>
+                                <div class="stat-label-small">Terkirim</div>
                             </div>
                             <div class="stat-box">
                                 <div class="stat-value">${attack.failed}</div>
-                                <div class="stat-label-small">Failed</div>
+                                <div class="stat-label-small">Gagal</div>
                             </div>
                             <div class="stat-box">
                                 <div class="stat-value">${attack.total}</div>
                                 <div class="stat-label-small">Total</div>
                             </div>
                         </div>
-                        
-                        <div style="font-size: 0.9rem; color: #888; margin: 10px 0;">
-                            <strong>Message:</strong> ${attack.message.substring(0, 50)}${attack.message.length > 50 ? '...' : ''}
+                        <div style="font-size: 0.9rem; color: #aaa; margin: 10px 0;">
+                            <strong>Pesan:</strong> ${attack.message.substring(0, 50)}${attack.message.length > 50 ? '...' : ''}
                         </div>
-                        
-                        <div style="font-size: 0.8rem; color: #666;">
-                            Started: ${attack.start_time}
-                            ${attack.end_time ? `<br>Ended: ${attack.end_time}` : ''}
+                        <div style="font-size: 0.8rem; color: #888;">
+                            Mulai: ${attack.start_time}
+                            ${attack.end_time ? `<br>Selesai: ${attack.end_time}` : ''}
                         </div>
-                        
                         ${attack.status === 'running' ? `
                             <div class="attack-actions">
                                 <button class="btn btn-danger btn-small" onclick="stopAttack('${attackId}')">
@@ -659,76 +578,60 @@
                     </div>
                 `;
             }
-            
             attacksList.innerHTML = html;
         }
-
         function updateGlobalStats(statusData) {
             let totalAttacks = 0;
             let totalSent = 0;
             let totalFailed = 0;
-            
             for (const attack of Object.values(statusData)) {
                 if (attack.status === 'running') totalAttacks++;
                 totalSent += attack.sent;
                 totalFailed += attack.failed;
             }
-            
             const successRate = totalSent + totalFailed > 0 ? 
                 Math.round((totalSent / (totalSent + totalFailed)) * 100) : 0;
-            
-            
             const speed = Math.round(totalSent * 4); 
-            
             document.getElementById('total-attacks').textContent = totalAttacks;
             document.getElementById('total-sent').textContent = totalSent;
             document.getElementById('total-failed').textContent = totalFailed;
             document.getElementById('success-rate').textContent = successRate + '%';
             document.getElementById('speed').textContent = speed;
         }
-
         async function clearCompleted() {
             try {
                 const response = await fetch('/clear_completed');
                 const result = await response.json();
-                
                 if (result.success) {
-                    showNotification(`Cleared ${result.cleared} completed attacks`, 'success');
+                    showNotification(`Berhasil membersihkan ${result.cleared} serangan selesai`, 'success');
                     loadStatus();
                 }
             } catch (error) {
-                showNotification('Failed to clear completed attacks', 'error');
+                showNotification('Gagal membersihkan serangan selesai', 'error');
             }
         }
-
         async function checkConnection() {
             try {
                 const response = await fetch('/check_connection');
                 const result = await response.json();
-                
                 if (result.success) {
                     showNotification(`✅ ${result.message}`, 'success');
                 } else {
                     showNotification(`❌ ${result.message}`, 'error');
                 }
             } catch (error) {
-                showNotification('Failed to check connection', 'error');
+                showNotification('Gagal tes koneksi', 'error');
             }
         }
-
-
-
         async function validateUsername() {
-            const username = document.getElementById('username').value.trim();
+            const usernameInput = document.getElementById('username').value.trim();
+            const username = extractUsername(usernameInput);
             const statusDiv = document.getElementById('username-status');
-            
             if (!username) {
-                statusDiv.innerHTML = '<span style="color: #ff6b35;">⚠️ Please enter a username</span>';
+                statusDiv.innerHTML = '<span style="color: #ff6b35;">⚠️ Masukkan username atau link</span>';
                 return;
             }
-            
-            statusDiv.innerHTML = '<span style="color: #ff6b35;">🔄 Checking username...</span>';
-            
+            statusDiv.innerHTML = '<span style="color: #ff6b35;">🔄 Memeriksa username...</span>';
             try {
                 const response = await fetch('/validate_username', {
                     method: 'POST',
@@ -737,42 +640,47 @@
                     },
                     body: JSON.stringify({ username: username })
                 });
-                
                 const result = await response.json();
-                
                 if (result.success) {
                     if (result.exists) {
-                        statusDiv.innerHTML = '<span style="color: #00ff00;">✅ Username is valid and exists</span>';
+                        statusDiv.innerHTML = '<span style="color: #00ff00;">✅ Username valid &amp; ditemukan</span>';
                         showNotification(`✅ ${result.message}`, 'success');
                     } else {
-                        statusDiv.innerHTML = '<span style="color: #ff6b35;">⚠️ Username might not exist</span>';
+                        statusDiv.innerHTML = '<span style="color: #ff6b35;">⚠️ Username tidak ditemukan</span>';
                         showNotification(`⚠️ ${result.message}`, 'error');
                     }
                 } else {
-                    statusDiv.innerHTML = '<span style="color: #ff0000;">❌ Error checking username</span>';
+                    statusDiv.innerHTML = '<span style="color: #ff0000;">❌ Error memeriksa username</span>';
                     showNotification(`❌ ${result.message}`, 'error');
                 }
             } catch (error) {
-                statusDiv.innerHTML = '<span style="color: #ff0000;">❌ Failed to validate username</span>';
-                showNotification('Failed to validate username', 'error');
+                statusDiv.innerHTML = '<span style="color: #ff0000;">❌ Gagal validasi username</span>';
+                showNotification('Gagal validasi username', 'error');
             }
         }
-
         function showNotification(message, type) {
             const notification = document.getElementById('notification');
             notification.textContent = message;
             notification.className = `floating-notification notification-${type}`;
-            
             setTimeout(() => {
                 notification.classList.add('notification-show');
             }, 100);
-            
             setTimeout(() => {
                 notification.classList.remove('notification-show');
             }, 3000);
         }
-
-        
+        function extractUsername(input) {
+            try {
+                if (input.includes('ngl.link')) {
+                    let url = input.trim();
+                    if (!url.startsWith('http')) url = 'https://' + url;
+                    const u = new URL(url);
+                    const path = u.pathname.replaceAll('/', '');
+                    return path;
+                }
+            } catch (e) {}
+            return input.trim().replace(/^@/, '');
+        }
         setInterval(loadStatus, 5000);
     </script>
 </body>
